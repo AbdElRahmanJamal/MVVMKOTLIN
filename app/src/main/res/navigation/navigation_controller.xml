@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation_controller"
+            app:startDestination="@id/movieListPage">
+
+    <fragment android:id="@+id/movieListPage" android:name="com.kotlinmvvm.UI.newslistUI.NewsListPage"
+              android:label="movie_list_fragment" tools:layout="@layout/news_list_fragment">
+        <action
+            android:id="@+id/goToDetailsPage"
+            app:destination="@id/newsDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetails"
+        android:name="com.kotlinmvvm.UI.newslistdetails.NewsDetails"
+        android:label="news_details_fragment"
+        tools:layout="@layout/news_details_fragment" >
+        <argument
+            android:name="ArticelDetails"
+            app:argType="com.kotlinmvvm.data.response.Article" />
+    </fragment>
+</navigation>
